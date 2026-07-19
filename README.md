@@ -3,7 +3,6 @@
 [![Version](https://img.shields.io/badge/version-3.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
 [![C#](https://img.shields.io/badge/C%23-100%25-blue)](https://github.com/zxcillaura/GameOptimizer)
 [![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6)](https://github.com/zxcillaura/GameOptimizer)
-[![Downloads](https://img.shields.io/github/downloads/zxcillaura/GameOptimizer/total)](https://github.com/zxcillaura/GameOptimizer/releases)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 ## 📖 О проекте
