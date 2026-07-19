@@ -1,0 +1,33 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.pdb
+*.db
+
+# Visual Studio
+.vs/
+*.userprefs
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Build outputs (но сохраняем релизы)
+*.exe
+*.dll
+*.pdb
+!releases/*.exe
+
+# Logs
+*.log

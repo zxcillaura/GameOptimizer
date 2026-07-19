@@ -1,0 +1,25 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.tmp
+*.nupkg
+*.pdb
+*.dll
+*.exe
+
+# Visual Studio
+.vs/
+.vscode/
+*.swp
+*.swo
+
+# Пользовательские настройки
+appsettings.Development.json
+appsettings.Production.json
+
+# Папка публикации
+publish/

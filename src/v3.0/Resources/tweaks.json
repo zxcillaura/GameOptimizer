@@ -1,0 +1,499 @@
+[
+  {
+    "Id": "MPO_Disable",
+    "DisplayName": "Отключение Multi-Plane Overlay (MPO)",
+    "Description": "Устраняет микрофризы, мерцания экрана на картах NVIDIA/AMD в играх.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Dwm",
+    "CheckValueName": "OverlayTestMode",
+    "ExpectedValue": 5,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Dwm",
+        "ValueName": "OverlayTestMode",
+        "Value": 5,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\Dwm",
+        "ValueName": "OverlayTestMode",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "TCP_NoDelay",
+    "DisplayName": "Сетевой твик TCP NoDelay",
+    "Description": "Принудительно отключает буферизацию пакетов Windows для снижения пинга.",
+    "Category": "Network",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\MSTCPIP\\Parameters",
+    "CheckValueName": "TcpNoDelay",
+    "ExpectedValue": 1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\MSTCPIP\\Parameters",
+        "ValueName": "TcpNoDelay",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\MSTCPIP\\Parameters",
+        "ValueName": "TcpNoDelay",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Network_Throttling",
+    "DisplayName": "Отключение Network Throttling",
+    "Description": "Запрещает Windows ограничивать сетевой трафик во время высокой нагрузки на CPU.",
+    "Category": "Network",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+    "CheckValueName": "NetworkThrottlingIndex",
+    "ExpectedValue": -1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+        "ValueName": "NetworkThrottlingIndex",
+        "Value": -1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+        "ValueName": "NetworkThrottlingIndex",
+        "Value": 10,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_Telemetry",
+    "DisplayName": "Отключение Телеметрии Windows",
+    "Description": "Выключает фоновую отправку отчетов в Microsoft, освобождая процессор.",
+    "Category": "Privacy",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+    "CheckValueName": "AllowTelemetry",
+    "ExpectedValue": 0,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+        "ValueName": "AllowTelemetry",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+        "ValueName": "AllowTelemetry",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "FSO_Disable",
+    "DisplayName": "Отключение Fullscreen Optimizations",
+    "Description": "Принудительно запускает игры в чистом эксклюзивном полноэкранном режиме (снижает инпутлаг).",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_CURRENT_USER\\System\\GameConfigStore",
+    "CheckValueName": "GameDVR_FSEBehaviorMode",
+    "ExpectedValue": 2,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\System\\GameConfigStore",
+        "ValueName": "GameDVR_FSEBehaviorMode",
+        "Value": 2,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\System\\GameConfigStore",
+        "ValueName": "GameDVR_FSEBehaviorMode",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Mouse_Fix",
+    "DisplayName": "Оптимизация отклика мыши",
+    "Description": "Убирает сглаживание и акселерацию мыши в реестре для точного аима.",
+    "Category": "Input",
+    "CheckRegistryPath": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
+    "CheckValueName": "MouseSpeed",
+    "ExpectedValue": "0",
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
+        "ValueName": "MouseSpeed",
+        "Value": "0",
+        "ValueKind": 1
+      },
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
+        "ValueName": "MouseThreshold1",
+        "Value": "0",
+        "ValueKind": 1
+      },
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
+        "ValueName": "MouseThreshold2",
+        "Value": "0",
+        "ValueKind": 1
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Control Panel\\Mouse",
+        "ValueName": "MouseSpeed",
+        "Value": "1",
+        "ValueKind": 1
+      }
+    ]
+  },
+  {
+    "Id": "USB_Selective_Suspend",
+    "DisplayName": "Отключение USB выборочной приостановки",
+    "Description": "Запрещает Windows отключать USB-порты для экономии энергии – устраняет микрофризы мыши/клавиатуры.",
+    "Category": "Input",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\USB",
+    "CheckValueName": "DisableSelectiveSuspend",
+    "ExpectedValue": 1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\USB",
+        "ValueName": "DisableSelectiveSuspend",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\USB",
+        "ValueName": "DisableSelectiveSuspend",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "USB_Polling_Interval",
+    "DisplayName": "Увеличение частоты опроса USB (Polling Interval)",
+    "Description": "Устанавливает минимальный интервал опроса USB-устройств (1 мс) – снижает задержку мыши/клавиатуры.",
+    "Category": "Input",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36fc9e60-c465-11cf-8056-444553540000}\\0000",
+    "CheckValueName": "PollingInterval",
+    "ExpectedValue": 1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36fc9e60-c465-11cf-8056-444553540000}\\0000",
+        "ValueName": "PollingInterval",
+        "Value": 1,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36fc9e60-c465-11cf-8056-444553540000}\\0001",
+        "ValueName": "PollingInterval",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36fc9e60-c465-11cf-8056-444553540000}\\0000",
+        "ValueName": "PollingInterval",
+        "Value": 8,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{36fc9e60-c465-11cf-8056-444553540000}\\0001",
+        "ValueName": "PollingInterval",
+        "Value": 8,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Audio_Low_Latency",
+    "DisplayName": "Режим низкой задержки аудио (Low Latency Mode)",
+    "Description": "Оптимизирует аудио-драйверы для снижения задержки звука – полезно для наушников и микрофона.",
+    "Category": "Audio",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+    "CheckValueName": "GPU Priority",
+    "ExpectedValue": 8,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "GPU Priority",
+        "Value": 8,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "Priority",
+        "Value": 6,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "Scheduling Category",
+        "Value": "High",
+        "ValueKind": 1
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "GPU Priority",
+        "Value": 0,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "Priority",
+        "Value": 1,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile\\Tasks\\Audio",
+        "ValueName": "Scheduling Category",
+        "Value": "Medium",
+        "ValueKind": 1
+      }
+    ]
+  },
+  {
+    "Id": "Disable_IPv6",
+    "DisplayName": "Отключение IPv6",
+    "Description": "Отключает протокол IPv6, который редко используется в играх, снижая нагрузку на сетевой стек.",
+    "Category": "Network",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+    "CheckValueName": "DisabledComponents",
+    "ExpectedValue": 255,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+        "ValueName": "DisabledComponents",
+        "Value": 255,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\Tcpip6\\Parameters",
+        "ValueName": "DisabledComponents",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_Defender",
+    "DisplayName": "Отключение Защитника Windows",
+    "Description": "Полностью отключает встроенный антивирус – повышает производительность в играх.",
+    "Category": "Privacy",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender",
+    "CheckValueName": "DisableAntiSpyware",
+    "ExpectedValue": 1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender",
+        "ValueName": "DisableAntiSpyware",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SOFTWARE\\Policies\\Microsoft\\Windows Defender",
+        "ValueName": "DisableAntiSpyware",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_Visual_Effects",
+    "DisplayName": "Отключение визуальных эффектов интерфейса",
+    "Description": "Убирает визуальные эффекты и анимации окон – снижает нагрузку на GPU и CPU.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+    "CheckValueName": "VisualFXSetting",
+    "ExpectedValue": 2,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+        "ValueName": "VisualFXSetting",
+        "Value": 2,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+        "ValueName": "VisualFXSetting",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_Transparency",
+    "DisplayName": "Отключение прозрачности окон",
+    "Description": "Отключает эффект прозрачности (Aero) – ускоряет отрисовку интерфейса.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+    "CheckValueName": "EnableTransparency",
+    "ExpectedValue": 0,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+        "ValueName": "EnableTransparency",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+        "ValueName": "EnableTransparency",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_GameBar",
+    "DisplayName": "Отключение Game Bar и GameDVR",
+    "Description": "Полностью отключает оверлей Xbox и фоновую запись – снижает задержку ввода в играх.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\GameBar",
+    "CheckValueName": "UseNexusForGameBarEnabled",
+    "ExpectedValue": 0,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\GameBar",
+        "ValueName": "UseNexusForGameBarEnabled",
+        "Value": 0,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+        "ValueName": "AppCaptureEnabled",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\GameBar",
+        "ValueName": "UseNexusForGameBarEnabled",
+        "Value": 1,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+        "ValueName": "AppCaptureEnabled",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Disable_Spectre_Meltdown",
+    "DisplayName": "Отключение защиты Spectre/Meltdown",
+    "Description": "Отключает патчи безопасности процессора – даёт прирост FPS (до 15%), но снижает защиту.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
+    "CheckValueName": "FeatureSettingsOverride",
+    "ExpectedValue": 3,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
+        "ValueName": "FeatureSettingsOverride",
+        "Value": 3,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
+        "ValueName": "FeatureSettingsOverrideMask",
+        "Value": 3,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
+        "ValueName": "FeatureSettingsOverride",
+        "Value": 0,
+        "ValueKind": 4
+      },
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management",
+        "ValueName": "FeatureSettingsOverrideMask",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "Optimize_NTFS",
+    "DisplayName": "Оптимизация NTFS",
+    "Description": "Отключает обновление времени последнего доступа к файлам, снижая износ диска и задержки.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
+    "CheckValueName": "NtfsDisableLastAccessUpdate",
+    "ExpectedValue": 1,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
+        "ValueName": "NtfsDisableLastAccessUpdate",
+        "Value": 1,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\FileSystem",
+        "ValueName": "NtfsDisableLastAccessUpdate",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  },
+  {
+    "Id": "GPU_Hardware_Scheduling",
+    "DisplayName": "Включение аппаратного планирования GPU (HAGS)",
+    "Description": "Позволяет видеокарте самостоятельно управлять памятью, снижая задержку вывода кадра.",
+    "Category": "System",
+    "CheckRegistryPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+    "CheckValueName": "HwSchMode",
+    "ExpectedValue": 2,
+    "ApplyOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "ValueName": "HwSchMode",
+        "Value": 2,
+        "ValueKind": 4
+      }
+    ],
+    "RevertOperations": [
+      {
+        "KeyPath": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+        "ValueName": "HwSchMode",
+        "Value": 0,
+        "ValueKind": 4
+      }
+    ]
+  }
+]
