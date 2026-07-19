@@ -3,6 +3,10 @@
 [![Version](https://img.shields.io/badge/version-3.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
 [![C#](https://img.shields.io/badge/C%23-100%25-blue)](https://github.com/zxcillaura/GameOptimizer)
 [![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6)](https://github.com/zxcillaura/GameOptimizer)
+[![Downloads](https://img.shields.io/github/downloads/zxcillaura/GameOptimizer/total)](https://github.com/zxcillaura/GameOptimizer/releases)
+[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+---
 
 ## 📖 О проекте
 
@@ -47,13 +51,14 @@
 
 ## 📂 Структура проекта
 GameOptimizer/
-├── src/
-│ ├── v1.0/ # Исходники первой версии
-│ ├── v2.0/ # Исходники второй версии
-│ └── v3.0/ # Исходники третьей версии (актуальная)
-├── releases/ # Скомпилированные .exe файлы
-├── README.md # Этот файл
-└── CHANGELOG.md # История изменений
+├── 📁 src/
+│ ├── 📁 v1.0/ # Исходники первой версии
+│ ├── 📁 v2.0/ # Исходники второй версии
+│ └── 📁 v3.0/ # Исходники третьей версии (актуальная)
+├── 📁 releases/ # Скомпилированные .exe файлы
+├── 📄 README.md # Описание проекта
+├── 📄 CHANGELOG.md # История изменений
+└── 📄 .gitignore # Игнорируемые файлы
 
 ---
 
@@ -63,14 +68,19 @@ GameOptimizer/
 # Установи .NET SDK (https://dotnet.microsoft.com/download)
 dotnet restore
 dotnet build -c Release
-
 ⚠️ Предупреждения
-Антивирусы могут ложно срабатывать — это нормально для программ, изменяющих реестр
+🛡️ Антивирусы могут ложно срабатывать — это нормально для программ, изменяющих реестр
 
-Исходный код полностью открыт и безопасен
+🔓 Исходный код полностью открыт и безопасен
 
-Все изменения обратимы (есть кнопка восстановления)
+🔄 Все изменения обратимы (есть кнопка восстановления)
 
 📝 История изменений
 Подробный список в CHANGELOG.md
-	
+
+📞 Контакты
+📧 Email: godkotbot@gmail.com
+
+🐙 GitHub: zxcillaura
+
+⭐ Если проект полезен — поставь звезду! ⭐
