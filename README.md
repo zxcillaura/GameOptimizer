@@ -53,9 +53,9 @@
 | Версия | Дата | Скачать | Что нового |
 |--------|------|---------|-----------|
 | **v1.0.0** 🔥 | 09.10.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0.0) | Полная пересборка: единый движок, 96 твиков, dry-run, CLI |
-| v3.0 (legacy) | 19.07.2026 | [источник](legacy/v3.0) | Панель диагностики, вкладочный UI (архив) |
-| v2.0 (legacy) | 15.07.2026 | [источник](legacy/v2.0) | DNS Jumper, FACEIT/Vanguard (архив) |
-| v1.0 (legacy) | 11.07.2026 | [источник](legacy/v1.0) | Первый прототип (архив) |
+| v3.0 (legacy) | 19.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v3.0) · [источник](legacy/v3.0) | Панель диагностики, вкладочный UI |
+| v2.0 (legacy) | 15.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v2.0) · [источник](legacy/v2.0) | DNS Jumper, FACEIT/Vanguard |
+| v1.0 (legacy) | 11.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0) · [источник](legacy/v1.0) | Первый прототип |
 
 ## Сборка
 
