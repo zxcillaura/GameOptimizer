@@ -31,6 +31,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- legacy/ holds archived old versions — keep them out of the build -->
+    <Compile Remove="legacy/**" />
+    <None Remove="legacy/**" />
+    <EmbeddedResource Remove="legacy/**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
     <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
