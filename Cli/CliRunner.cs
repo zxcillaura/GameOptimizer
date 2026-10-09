@@ -83,7 +83,7 @@ namespace GameOptimizer.Cli
 
         private static int Doctor()
         {
-            Console.WriteLine("GAMEOPTIMIZ 1.0 — самодиагностика");
+            Console.WriteLine("GAMEOPTIMIZ 4.0 — самодиагностика");
             Console.WriteLine();
             var rig = HardwareScanner.Scan();
             var health = GameOptimizer.Core.Health.HealthReport.Evaluate(rig);
@@ -369,7 +369,7 @@ namespace GameOptimizer.Cli
 
         private static int Help()
         {
-            Console.WriteLine("GAMEOPTIMIZ 1.0 — режим командной строки");
+            Console.WriteLine("GAMEOPTIMIZ 4.0 — режим командной строки");
             Console.WriteLine();
             Console.WriteLine("  GAMEOPTIMIZ1.0.exe /scan                 диагностика железа и системы");
             Console.WriteLine("  GAMEOPTIMIZ1.0.exe /doctor               железо + применимость твиков + HealthScore");

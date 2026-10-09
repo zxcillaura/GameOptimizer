@@ -327,7 +327,7 @@ namespace GameOptimizer.UI.UserControls
 
         private void ConfirmNetworkAction(string message, Action action)
         {
-            if (MessageBox.Show(message + "\n\nGAMEOPTIMIZ 1.0 не обещает универсального снижения ping.", "Сетевое действие", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
+            if (MessageBox.Show(message + "\n\nGAMEOPTIMIZ 4.0 не обещает универсального снижения ping.", "Сетевое действие", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes) return;
             Task.Run(action);
         }
 

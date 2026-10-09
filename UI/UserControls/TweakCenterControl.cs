@@ -312,7 +312,7 @@ namespace GameOptimizer.UI.UserControls
                 ? "\n\nСброс стека требует перезагрузки и откату не подлежит."
                 : "\n\nЭто агрессивное изменение: возможен нагрев и шум, откат — кнопкой «Откатить».";
             return MessageBox.Show($"{item.Title}\n\n{item.Desc}{extra}\n\nПродолжить?",
-                       "GAMEOPTIMIZ 1.0 — рискованный твик",
+                       "GAMEOPTIMIZ 4.0 — рискованный твик",
                        MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
         }
 
@@ -329,7 +329,7 @@ namespace GameOptimizer.UI.UserControls
             if (MessageBox.Show($"Включить {targets.Count} пункт(ов) из текущего отбора?\n\n" +
                                 string.Join("\n", targets.Take(12).Select(t => "• " + t.Item.Title)) +
                                 (targets.Count > 12 ? $"\n… и ещё {targets.Count - 12}" : ""),
-                    "GAMEOPTIMIZ 1.0 — массовое включение",
+                    "GAMEOPTIMIZ 4.0 — массовое включение",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes) return;
 
             RunAsync($"Включаю {targets.Count} пункт(ов)...", () =>
@@ -356,7 +356,7 @@ namespace GameOptimizer.UI.UserControls
             if (targets.Count == 0) { Log("Для показанных пунктов нет сохранённых бэкапов."); return; }
 
             if (MessageBox.Show($"Откатить {targets.Count} пункт(ов) до состояния «как было»?",
-                    "GAMEOPTIMIZ 1.0 — массовый откат", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                    "GAMEOPTIMIZ 4.0 — массовый откат", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 return;
 
             RunAsync($"Откатываю {targets.Count} пункт(ов)...", () =>

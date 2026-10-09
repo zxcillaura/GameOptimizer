@@ -1,17 +1,21 @@
-# GAMEOPTIMIZ 1.0
+# GAMEOPTIMIZ 4.0
 
 **Optimization by zxcillaura**
 
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
+[![Version](https://img.shields.io/badge/version-4.0.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
+[![Build](https://github.com/zxcillaura/GameOptimizer/actions/workflows/build.yml/badge.svg)](https://github.com/zxcillaura/GameOptimizer/actions)
 [![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/download)
 [![Windows](https://img.shields.io/badge/Windows-10%2F11_x64-0078D6?logo=windows11)](https://www.microsoft.com/windows)
-[![C#](https://img.shields.io/badge/C%23-WinForms-9F3F77?logo=sharp)](https://learn.microsoft.com/visualstudio/csharp/)
+[![License](https://img.shields.io/badge/license-MIT-4D8B56)](LICENSE)
+
+![GAMEOPTIMIZ 4.0 preview](docs/preview-4.0.png)
 
 Утилита для настройки Windows 10/11 под игровую нагрузку: **96 контролируемых твиков**
 с бэкапом и откатом, безопасный очиститель, диагностика железа, HealthScore,
 чистый игровой режим и полный CLI. WinForms, .NET 8, x64.
 
-> Продолжение линейки GameOptimizer (v1.0–v3.0). Старые версии сохранены в [`/legacy`](legacy).
+> Линейка: v1.0 → v2.0 → v3.0 (июль 2026) → **v4.0.0** (пересборка, текущая).
+> Старые версии сохранены в [`/legacy`](legacy) и в релизах.
 
 ---
 
@@ -52,10 +56,10 @@
 
 | Версия | Дата | Скачать | Что нового |
 |--------|------|---------|-----------|
-| **v1.0.0** 🔥 | 09.10.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0.0) | Полная пересборка: единый движок, 96 твиков, dry-run, CLI |
-| v3.0 (legacy) | 19.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v3.0) · [источник](legacy/v3.0) | Панель диагностики, вкладочный UI |
-| v2.0 (legacy) | 15.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v2.0) · [источник](legacy/v2.0) | DNS Jumper, FACEIT/Vanguard |
-| v1.0 (legacy) | 11.07.2026 | [⬇️ pre-release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0) · [источник](legacy/v1.0) | Первый прототип |
+| **v4.0.0** 🔥 | 09.10.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v4.0.0) | Пересборка: единый движок GUI/CLI, 96 твиков, dry-run, CLI |
+| v3.0 | 19.07.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v3.0) · [источник](legacy/v3.0) | Панель диагностики, вкладочный UI |
+| v2.0 | 15.07.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v2.0) · [источник](legacy/v2.0) | DNS Jumper, FACEIT/Vanguard |
+| v1.0 | 11.07.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0) · [источник](legacy/v1.0) | Первый прототип |
 
 ## Сборка
 
@@ -112,11 +116,18 @@ Core/
   Bench/                  импорт и история замеров
 UI/                       MainForm + вкладки, кастомные контролы
 Utils/                    Reg, ProcessRunner, Toast и прочее
+docs/                     превью интерфейса
 legacy/                   старые версии v1.0/v2.0/v3.0 (только для истории)
+.github/                  CI-сборка (build.yml), шаблоны issues
 app.manifest              admin, longPathAware (DPI — PerMonitorV2 через API)
 PLAN_1.0_FINAL.md         полное техническое обоснование и статус кода
-WHATSNEW-1.0.txt          changelog релиза
+CHANGELOG.md              полная история версий
+WHATSNEW-4.0.txt          changelog текущего релиза
 ```
+
+## Лицензия
+
+[MIT](LICENSE) — делай что хочешь, но с сохранением авторства.
 
 ## Дисклеймер
 
