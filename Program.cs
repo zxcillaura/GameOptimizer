@@ -41,11 +41,11 @@ namespace GameOptimizer
             if (!firstInstance)
             {
                 MessageBox.Show(
-                    "GAMEOPTIMIZ 4.0 уже запущен.\n\n" +
+                    "GAMEOPTIMIZ 1.0 уже запущен.\n\n" +
                     "Второй экземпляр будет мешать первому: двойное слежение за играми, " +
                     "двойная очистка памяти и конфликт за таймер 0.5 мс.\n\n" +
                     "Переключись на уже открытое окно.",
-                    "GAMEOPTIMIZ 4.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "GAMEOPTIMIZ 1.0", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 single?.Dispose();
                 return;
             }
@@ -65,7 +65,7 @@ namespace GameOptimizer
                 if (!AdminChecker.IsRunningAsAdmin())
                 {
                     var result = MessageBox.Show(
-                        "GAMEOPTIMIZ 4.0 требует прав администратора для системных твиков.\n\n" +
+                        "GAMEOPTIMIZ 1.0 требует прав администратора для системных твиков.\n\n" +
                         "Нажми ДА, чтобы перезапустить от имени администратора.\n" +
                         "(Только просмотр и оценка железа работают и без прав.)",
                         "Запуск от администратора", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -116,9 +116,9 @@ namespace GameOptimizer
             try
             {
                 var path = Path.Combine(AppContext.BaseDirectory, "GAMEOPTIMIZ-startup-error.txt");
-                File.WriteAllText(path, $"GAMEOPTIMIZ 4.0 startup error\r\n{DateTime.Now:O}\r\n\r\n{ex}");
-                MessageBox.Show($"GAMEOPTIMIZ 4.0 не смог запуститься.\n\nЛог:\n{path}\n\nОшибка:\n{ex.Message}",
-                    "Ошибка запуска GAMEOPTIMIZ 4.0", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                File.WriteAllText(path, $"GAMEOPTIMIZ 1.0 startup error\r\n{DateTime.Now:O}\r\n\r\n{ex}");
+                MessageBox.Show($"GAMEOPTIMIZ 1.0 не смог запуститься.\n\nЛог:\n{path}\n\nОшибка:\n{ex.Message}",
+                    "Ошибка запуска GAMEOPTIMIZ 1.0", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch { }
         }

@@ -101,7 +101,7 @@ namespace GameOptimizer.UI.Controls
 
             using (var f = new Font("Segoe UI", 8f))
             using (var b = new SolidBrush(Theme.Alpha(Theme.TextSecondary, (int)(255 * _opacity))))
-                g.DrawString("GAMEOPTIMIZ 4.0", f, b, 16, 32);
+                g.DrawString("GAMEOPTIMIZ 1.0", f, b, 16, 32);
         }
 
         protected override void Dispose(bool disposing)

@@ -164,7 +164,7 @@ namespace GameOptimizer.Core.Games
 
             // CS2 does not always auto-execute autoexec.cfg — tell the user how to be sure.
             var instr = new StringBuilder();
-            instr.AppendLine("GAMEOPTIMIZ 4.0 — что донастроить руками");
+            instr.AppendLine("GAMEOPTIMIZ 1.0 — что донастроить руками");
             instr.AppendLine("=====================================");
             instr.AppendLine();
             instr.AppendLine("1) STEAM LAUNCH OPTIONS");

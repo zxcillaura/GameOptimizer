@@ -64,7 +64,7 @@ namespace GameOptimizer.UI
 
         private void InitializeForm()
         {
-            Text            = "GAMEOPTIMIZ 4.0";
+            Text            = "GAMEOPTIMIZ 1.0";
             Size            = new Size(1260, 820);
             MinimumSize     = new Size(1120, 720);
             FormBorderStyle = FormBorderStyle.None;
