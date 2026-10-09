@@ -1,33 +1,20 @@
-# .NET
+# .NET / build output
 bin/
 obj/
+publish/
 *.user
 *.suo
-*.pdb
-*.db
 
-# Visual Studio
+# Visual Studio / Rider
 .vs/
+.idea/
 *.userprefs
 
-# VS Code
-.vscode/
-
-# Windows
+# OS / editor
 Thumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+desktop.ini
+.DS_Store
+*.tmp
 
-# Archives
-*.zip
-*.rar
-*.7z
-
-# Build outputs (но сохраняем релизы)
-*.exe
-*.dll
-*.pdb
-!releases/*.exe
-
-# Logs
-*.log
+# Local build artifacts that must never be committed
+GAMEOPTIMIZ1.0.exe.bak-*

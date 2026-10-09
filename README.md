@@ -1,337 +1,126 @@
-# 🚀 GameOptimizer — Максимальный FPS для Windows
+# GAMEOPTIMIZ 1.0
 
-[![Version](https://img.shields.io/badge/version-3.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
-[![C#](https://img.shields.io/badge/C%23-100%25-blue)](https://github.com/zxcillaura/GameOptimizer)
-[![Windows](https://img.shields.io/badge/Windows-10%2F11-0078D6)](https://github.com/zxcillaura/GameOptimizer)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+**Optimization by zxcillaura**
 
-## 📖 О проекте
+[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)](https://github.com/zxcillaura/GameOptimizer/releases)
+[![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/download)
+[![Windows](https://img.shields.io/badge/Windows-10%2F11_x64-0078D6?logo=windows11)](https://www.microsoft.com/windows)
+[![C#](https://img.shields.io/badge/C%23-WinForms-9F3F77?logo=sharp)](https://learn.microsoft.com/visualstudio/csharp/)
 
-**GameOptimizer** — мощная утилита для оптимизации Windows 10/11 под игры. Повышает FPS, снижает задержки (input lag), отключает ресурсоемкие службы и настраивает сеть.
+Утилита для настройки Windows 10/11 под игровую нагрузку: **96 контролируемых твиков**
+с бэкапом и откатом, безопасный очиститель, диагностика железа, HealthScore,
+чистый игровой режим и полный CLI. WinForms, .NET 8, x64.
 
-> 🎯 **Цель:** Максимальная производительность в играх с минимальными усилиями.
-
----
-
-## ✨ Возможности
-
-| Функция | Описание |
-|---------|----------|
-| ⚡ **Режимы оптимизации** | Жесткая (макс FPS) и Мягкая (безопасная) |
-| 🌐 **DNS Jumper** | 30+ DNS серверов с тестом пинга |
-| 🛡️ **Управление античитами** | FACEIT (Hyper-V/VBS) и Riot Vanguard (TPM/Secure Boot) |
-| 🧹 **Очистка системы** | Кэш, Prefetch, временные файлы, шейдерный кэш |
-| 📊 **Диагностика** | Информация о ПК и статус сервисов |
-| 🎮 **Профили игр** | Готовая оптимизация для CS2, Valorant, Apex |
-| 📥 **Профили настроек** | Сохраняйте и загружайте свои конфигурации |
-| 🔄 **Система отката** | Откатите любые изменения одной кнопкой |
+> Продолжение линейки GameOptimizer (v1.0–v3.0). Старые версии сохранены в [`/legacy`](legacy).
 
 ---
 
-## 📥 Скачать
+## Возможности
 
-### Последние версии
+### Профили (GUI и CLI — один движок)
+
+| Профиль | Что делает |
+|---|---|
+| **Безопасный** | только твики уровня «безопасно» |
+| **Баланс** | безопасные + умеренные — рекомендуемый |
+| **Экстрим** | + рискованные (защита, VBS) — только для изолированной игровой машины |
+| **Вернуть к заводским** | откат только тех твиков, для которых есть бэкап |
+
+Перед применением — **dry-run (кнопка «ПРЕДПРОСМОТР»)**: сколько действий,
+каких уровней риска, где нужна перезагрузка, что пропущено как неприменимое.
+Запуск профилей без прав администратора заблокирован — система не остаётся
+изменённой наполовину.
+
+### Разделы
+- **Главная** — HealthScore (0–100), ТОП-3 ограничителя с кнопкой «Исправить», конфигурация.
+- **Профили** — 4 профиля × категории, предпросмотр, лог применения.
+- **Центр твиков** — 96 твиков: состояние, риск, бэкап, применить/откатить по одному.
+- **Мышь и клава** — input-lag настройки + тест очереди событий.
+- **Сеть** — EEE/NIC/MTU/DNS + замер LAN→DNS→интернет **до/после** с вердиктом.
+- **Очиститель** — 19 целей, предпросмотр размера, безопасные значения по умолчанию.
+- **Игровой режим** — наблюдение за сессией, закрытие оверлеев, purge standby-памяти.
+
+### Безопасность — как устроена
+- Каждый твик: свой детектор состояния, свой бэкап (`%LocalAppData%\GAMEOPTIMIZ\backups\tweak-*.json`), свой откат.
+- Перед профилем — точка восстановления + снапшот реестра/bcd.
+- Очиститель: Prefetch и шейдерный кэш выключены по умолчанию, корзина и
+  Windows.old требуют отдельного подтверждения, Service Worker браузеров не трогается.
+- Формулировки честные: спорные пункты (HAGS, VBS, питание) не обещают универсальный
+  прирост FPS — эффект проверяется своим бенчмарком.
+
+## Скачать
 
 | Версия | Дата | Скачать | Что нового |
 |--------|------|---------|-----------|
-| **v3.0** 🔥 | 19.07.2026 | [⬇️ Скачать](https://github.com/zxcillaura/GameOptimizer/releases/latest) | Новая панель диагностики, Fluent Design UI |
-| v2.0 | 15.07.2026 | [⬇️ Скачать](https://github.com/zxcillaura/GameOptimizer/releases/tag/v2.0) | DNS Jumper, Управление античитами |
-| v1.0 | 11.07.2026 | [⬇️ Скачать](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0) | Первый релиз |
+| **v1.0.0** 🔥 | 09.10.2026 | [⬇️ Release](https://github.com/zxcillaura/GameOptimizer/releases/tag/v1.0.0) | Полная пересборка: единый движок, 96 твиков, dry-run, CLI |
+| v3.0 (legacy) | 19.07.2026 | [источник](legacy/v3.0) | Панель диагностики, вкладочный UI (архив) |
+| v2.0 (legacy) | 15.07.2026 | [источник](legacy/v2.0) | DNS Jumper, FACEIT/Vanguard (архив) |
+| v1.0 (legacy) | 11.07.2026 | [источник](legacy/v1.0) | Первый прототип (архив) |
 
----
+## Сборка
 
-## 🛠️ Установка
+Требования: Windows 10/11 x64, .NET 8 SDK.
 
-### Способ 1: Готовый .exe (Рекомендуется)
-
-1. **Скачайте** последнюю версию из [Releases](https://github.com/zxcillaura/GameOptimizer/releases)
-2. **Запустите** `GameOptimizer.exe` **от имени администратора**
-   - Кликните правой кнопкой → «Запуск от имени администратора»
-3. **Выберите** профиль и нажмите «Применить»
-
-> ⚠️ **Важно:** Перед применением твиков создайте точку восстановления системы!
-
-### Способ 2: Сборка из исходников
-
-```bash
-# Установите .NET SDK 8.0+
-# https://dotnet.microsoft.com/download
-
-# Клонируйте репозиторий
-git clone https://github.com/zxcillaura/GameOptimizer.git
-cd GameOptimizer
-
-# Способ 1: Используйте батник (Windows)
+```bat
 build.bat
-
-# Способ 2: Или вручную
-cd GameOptimizer
-dotnet restore
-dotnet build -c Release
 ```
 
----
+или вручную:
 
-## 📂 Структура проекта
-
-```
-GameOptimizer/
-├── 📁 Core/                          # Основная логика
-│   ├── Tweaks/                       # Система твиков
-│   │   ├── TweakBase.cs              # Базовый класс твика
-│   │   ├── RegistryTweak.cs          # Твики реестра
-│   │   └── ServiceTweak.cs           # Твики сервисов
-│   ├── Themes/                       # Система тем (Fluent Design)
-│   │   ├── Theme.cs                  # Базовая тема
-│   │   ├── DarkTheme.cs              # Темная тема
-│   │   └── LightTheme.cs             # Светлая тема
-│   ├── Profiles/                     # Система профилей
-│   │   ├── ProfileManager.cs         # Менеджер профилей
-│   │   └── Profile.cs                # Структура профиля
-│   ├── Preview/                      # Предпросмотр изменений
-│   │   └── TweakPreview.cs           # Менеджер предпросмотра
-│   └── Services/                     # Системные сервисы
-│       ├── RegistryService.cs        # Работа с реестром
-│       ├── DNSService.cs             # DNS операции
-│       └── SystemService.cs          # Информация о системе
-│
-├── 📁 UI/                            # Пользовательский интерфейс (WinForms)
-│   ├── MainForm.cs                   # Главное окно
-│   ├── MainForm.Designer.cs          # Дизайнер формы
-│   └── UserControls/                 # Компоненты UI
-│       ├── DashboardControl.cs       # Панель диагностики
-│       ├── SystemControl.cs          # Вкладка System
-│       ├── NetworkControl.cs         # Вкладка Network (DNS)
-│       ├── GamesControl.cs           # Вкладка Games
-│       ├── FaceitControl.cs          # Вкладка FACEIT
-│       ├── VanguardControl.cs        # Вкладка Vanguard
-│       └── CleanerControl.cs         # Вкладка Очистка
-│
-├── 📁 Utils/                         # Утилиты и помощники
-│   ├── RoundedPanel.cs               # Компонент с закруглеными углами
-│   ├── UIHelpers.cs                  # Функции для UI
-│   └── Logger.cs                     # Логирование операций
-│
-├── 📁 Resources/                     # Ресурсы
-│   ├── tweaks.json                   # База твиков (JSON)
-│   ├── dns-servers.json              # Список DNS серверов
-│   └── icons/                        # Иконки приложения
-│
-├── 📁 Properties/                    # Свойства проекта
-│   └── AssemblyInfo.cs               # Информация о версии
-│
-├── Program.cs                        # Точка входа приложения
-├── GameOptimizer.csproj              # Файл проекта
-├── build.bat                         # Батник для сборки
-├── quick-build.bat                   # Быстрая сборка
-└── run.bat                           # Запуск приложения
+```powershell
+dotnet publish -c Release -r win-x64 --self-contained true `
+  -p:PublishSingleFile=true -p:EnableCompressionInSingleFile=true
 ```
 
-### Описание папок
+Результат: `bin\Release\net8.0-windows\win-x64\publish\GAMEOPTIMIZ1.0.exe`
+(self-contained single-file, ~66 МБ).
 
-- **Core/** — вся бизнес-логика: твики, профили, управление системой
-- **UI/** — WinForms интерфейс с 7 вкладками функциональности  
-- **Utils/** — вспомогательные компоненты и функции
-- **Resources/** — данные в JSON (твики, DNS серверы, иконки)
+## CLI
 
----
-
-## 🎮 Как использовать
-
-### Базовое использование
-
-1. **Откройте** GameOptimizer.exe от администратора
-2. **Выберите** один из встроенных профилей:
-   - Competitive Gaming — максимум FPS (CS2, Valorant, Apex)
-   - Single Player — баланс для одиночных игр
-   - Streaming — оптимизация для трансляции
-   - System Cleanup — очистка системы
-3. **Нажмите** «Применить»
-4. **Перезагрузитесь** (рекомендуется)
-
-### Специальные операции
-
-#### DNS Jumper
-- Вкладка Network → выберите DNS сервер из списка
-- Автоматический тест пинга
-- Применяется сразу без перезагрузки
-
-#### Управление Античитами
-- **FACEIT**: Отключение Hyper-V и VBS
-- **Vanguard**: Отключение TPM и Secure Boot
-
-#### Очистка системы
-- Удаление файлов кэша
-- Очистка Prefetch
-- Удаление временных файлов
-- Очистка шейдерного кэша
-
----
-
-## ⚙️ Продвинутые настройки
-
-### Кастомный профиль
-
-1. Выберите нужные твики вручную
-2. Нажмите «Сохранить профиль»
-3. Назовите свой профиль
-4. Используйте его в будущем
-
-### Предпросмотр изменений
-
-Перед применением любого профиля:
-- Зелёные твики — безопасные
-- Жёлтые твики — требуют перезагрузки
-- Красные твики — опасные (требуют бэкапа)
-
-### Откат изменений
-
-Все изменения можно откатить:
-- Кнопка «Откат» (Undo) в меню
-- Автоматическое создание резервной копии реестра
-
----
-
-## ⚠️ Важные предупреждения
-
-### Безопасность
-
-- 🛡️ **Антивирусы** могут ложно срабатывать — это нормально для ПО, работающего с реестром
-- 🔓 **Исходный код** полностью открыт на GitHub, вы можете проверить каждую строку
-- 🔄 **Все изменения обратимы** — есть полная система отката
-
-### Рекомендации
-
-- ⚠️ Создайте **точку восстановления** перед применением
-- 📸 Если что-то сломалось, используйте **откат** или **System Restore**
-- 📝 Прочитайте описание каждого твика перед применением
-- 🔴 Красные твики применяйте только если знаете что делаете
-
----
-
-## 📝 Скриншоты
-
-### Главное окно
-
-```
-┌─────────────────────────────────────────┐
-│  GameOptimizer v3.0                     │
-├──────┬──────────────────────────────────┤
-│Panel │ 🎮 Competitive Gaming             │
-│Sys  │ Максимум FPS для конкурентных игр │
-│Net  │                                    │
-│Game │ ✓ Отключить Prefetch              │
-│...  │ ✓ Очистить кэш                    │
-│     │ ✓ Отключить Telemetry            │
-│     │                                    │
-│     │ [Предпросмотр] [Применить]        │
-└──────┴──────────────────────────────────┘
+```text
+GAMEOPTIMIZ1.0.exe /scan                  диагностика железа и системы
+GAMEOPTIMIZ1.0.exe /doctor                железо + HealthScore + применимость твиков
+GAMEOPTIMIZ1.0.exe /report                то же + отчёт в файл
+GAMEOPTIMIZ1.0.exe /apply safe|balanced|extreme [--no-restore-point] [--latency]
+GAMEOPTIMIZ1.0.exe /revert                откатить профиль (только твики с бэкапом)
+GAMEOPTIMIZ1.0.exe /tweaks [фильтр]       все твики: состояние / риск / группа
+GAMEOPTIMIZ1.0.exe /tweak <id> on|off|status
+GAMEOPTIMIZ1.0.exe /latency on|off|status удержание таймера 0.5 мс
+GAMEOPTIMIZ1.0.exe /purge                 очистить standby-список памяти
+GAMEOPTIMIZ1.0.exe /backup                точка восстановления + снапшот
+GAMEOPTIMIZ1.0.exe /monitor               живые CPU/GPU/RAM/температура + топ процессов
+GAMEOPTIMIZ1.0.exe /bench <csv> [игра] [метка]   импорт замера CapFrameX/PresentMon
+GAMEOPTIMIZ1.0.exe /session               состояние чистого игрового режима
 ```
 
----
+## Структура проекта
 
-## 🔧 Разработка
-
-### Требования
-
-- Windows 10/11
-- .NET SDK 8.0+
-- Visual Studio 2022 или VS Code
-
-### Сборка проекта
-
-```bash
-# Через батник (рекомендуется)
-build.bat
-
-# Или вручную
-cd GameOptimizer
-dotnet restore
-dotnet build -c Release
+```
+GameOptimizer.csproj      net8.0-windows, WinForms, self-contained publish
+Program.cs                вход: GUI или CLI (аргументы /scan, /doctor, ...)
+Cli/                      headless-режим, тот же движок что и GUI
+Core/
+  Profiles/               ProfileRunner: профили, категории, dry-run
+  Tweaks/                 каталог 96 твиков, TweakRunner (бэкап/откат), SystemTweaks
+  Backup/                 снапшоты реестра/bcd, точки восстановления
+  Hardware/               WMI/PowerShell-сканер железа (RigReport)
+  Health/                 HealthScore: оценка 0–100 + ТОП-3 ограничителя
+  Cleanup/                DeepCleaner: 19 целей очистки
+  Diagnostics/            сетевой тест до/после
+  Latency/                таймер 0.5 мс, standby purge
+  Games/                  игровой режим (сессии CS2/Dota2)
+  Bench/                  импорт и история замеров
+UI/                       MainForm + вкладки, кастомные контролы
+Utils/                    Reg, ProcessRunner, Toast и прочее
+legacy/                   старые версии v1.0/v2.0/v3.0 (только для истории)
+app.manifest              admin, longPathAware (DPI — PerMonitorV2 через API)
+PLAN_1.0_FINAL.md         полное техническое обоснование и статус кода
+WHATSNEW-1.0.txt          changelog релиза
 ```
 
-### Структура твика (пример)
+## Дисклеймер
 
-```csharp
-public class DisablePrefetchTweak : RegistryTweak
-{
-    public override string Name => "Отключить Prefetch";
-    public override string Description => "Отключает сервис Prefetch для ускорения загрузки";
-    public override string Category => "System";
-    
-    public override void Apply()
-    {
-        // HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management
-        Registry.SetValue("EnablePrefetcher", 0);
-    }
-    
-    public override void Revert()
-    {
-        Registry.SetValue("EnablePrefetcher", 3);
-    }
-}
-```
-
----
-
-## 🤝 Участие в разработке
-
-Вы можете помочь улучшить проект:
-
-1. **Создайте Issue** с описанием проблемы или идеи
-2. **Сделайте Fork** репозитория
-3. **Создайте Pull Request** с улучшениями
-4. **Обсудите** идеи в Discussions
-
----
-
-## 📊 Примеры результатов
-
-**До оптимизации:**
-- FPS: ~120 fps (Valorant на Medium)
-- Ping: 25ms
-- Система: множество фоновых процессов
-
-**После GameOptimizer:**
-- FPS: ~200+ fps (Valorant на Medium)
-- Ping: 15ms
-- Система: минимум фона, максимум ресурсов для игр
-
-*Результаты зависят от характеристик вашего ПК*
-
----
-
-## 📄 Лицензия
-
-Проект распространяется под лицензией **MIT** — вы можете использовать его свободно в личных и коммерческих целях.
-
----
-
-## 📞 Контакты
-
-- **Email:** godkotbot@gmail.com
-- **GitHub:** [@zxcillaura](https://github.com/zxcillaura)
-- **Discord:** zxcillaura
-
----
-
-## ❤️ Благодарности
-
-Спасибо всем, кто помогал в разработке, тестировании и улучшении GameOptimizer!
-
-Если проект полезен — **поставьте звезду** ⭐
-
----
-
-## 📚 Дополнительно
-
-- [CHANGELOG.md](CHANGELOG.md) — история изменений всех версий
-- [CONTRIBUTING.md](CONTRIBUTING.md) — как участвовать в разработке  
-- [ARCHITECTURE.md](ARCHITECTURE.md) — архитектура проекта для разработчиков
-- [SECURITY.md](SECURITY.md) — политика безопасности
-
----
-
-**Made with ❤️ by zxcillaura**
-
-Last updated: 19.07.2026
+Утилита меняет реестр, службы, загрузочные параметры и сетевые настройки.
+Перед «Экстримом» сделай точку восстановления. Любые изменения (особенно VBS,
+bcdedit-флаги, питание USB) проверяй бенчмарком на своём железе — универсальных
+гарантий FPS не существует.
